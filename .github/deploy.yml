@@ -1,0 +1,27 @@
+name: Deploy to Hostinger VPS
+
+# Déclencheur : Uniquement quand on push sur la branche 'main'
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    name: Deploy to VPS
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : Connexion SSH et exécution du script
+      # communautaire très fiable : appleboy/ssh-action
+      - name: Connect and Execute Deployment Script
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST_IP }}
+          username: ${{ secrets.HOST_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22 
+          
+          # Le script à exécuter une fois connecté
+          script: |
+            # On exécute le script chemin sur le VPS
+            /home/root/HandiMaker/deploy.sh
