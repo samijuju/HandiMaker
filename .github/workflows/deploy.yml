@@ -24,4 +24,4 @@ jobs:
           # Le script à exécuter une fois connecté
           script: |
             # On exécute le script chemin sur le VPS
-            /home/root/HandiMaker/deploy.sh
+            /root/HandiMaker/deploy.sh
