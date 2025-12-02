@@ -1,0 +1,12 @@
+[project]
+name = "handimaker"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "django>=5.2.8",
+    "gunicorn>=23.0.0", # Attention, vérifier que la 23 existe, sinon revenir à 22.0.0
+    "pillow>=11.0.0",   # Downgrade Pillow par sécurité si la 12 pose souci avec 3.12
+    "whitenoise>=6.7.0",
+]

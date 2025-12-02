@@ -1,0 +1,27 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# --- Environnements Virtuels ---
+# Le dossier  venv
+venv/
+env/
+.venv/
+
+# --- Django ---
+# La base de données locale
+db.sqlite3
+# Le dossier des fichiers statiques collectés pour la prod
+staticfiles/
+
+# --- Environnement de Développement (IDE) ---
+# Configuration spécifique à PyCharm (ne pas imposer tes settings aux autres)
+.idea/
+
+# --- SÉCURITÉ (CRITIQUE) ---
+# Les variables d'environnement contenant SECRET_KEY, mots de passe DB, etc.
+.env

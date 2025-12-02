@@ -1,0 +1,23 @@
+services:
+  handimaker_web:
+    # le Dockerfile est ICI (.)
+    build: .
+
+
+    container_name: handimaker_app
+    restart: always
+
+    # Lecture automatique du fichier .env pour les variables
+    env_file:
+      - .env
+
+    ports:
+      - "8001:8000"
+
+    volumes:
+      # CORRECTION DES CHEMINS : On est déjà dans le bon dossier
+      - ./db.sqlite3:/app/db.sqlite3
+      - ./media:/app/media
+      # Optionnel : Pour voir les logs Python en temps réel sans délai
+    environment:
+      - PYTHONUNBUFFERED=1
